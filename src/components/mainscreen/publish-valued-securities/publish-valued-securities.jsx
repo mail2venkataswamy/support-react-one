@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "react-modal";
 import "./publish-valued-securities.scss";
-import Tier from "../../../components/filterscreen/tier-level/tier-level.jsx";
-import Type from "../../../components/filterscreen/type/type.jsx";
+import Tier from "../../common/tier-level/tier-level.jsx";
+import Type from "../../common/type/type.jsx";
 
 let tierLevelData = [
   { label: "All", value: "All" },

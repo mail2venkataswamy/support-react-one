@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import "./suspend-restart-repo-modal.scss";
-import Tier from "../../../components/filterscreen/tier-level/tier-level.jsx";
+import Tier from "../../common/tier-level/tier-level.jsx";
 import Dropdown from "../../common/simple-dropdown/dropdown.jsx";
 import SuspendRestartRepoGrid from "./suspend-restart-grid/suspend-restart-grid.jsx";
 let tierLevelData = [

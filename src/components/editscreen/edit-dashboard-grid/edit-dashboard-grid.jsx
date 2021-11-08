@@ -1,5 +1,5 @@
 import React from "react";
-import Aggrid from "../../ag-grid/ag-grid.jsx";
+import Aggrid from "../../common/ag-grid/ag-grid.jsx";
 const rowData = [
   {
     ValuedSecurityEdits: "test",

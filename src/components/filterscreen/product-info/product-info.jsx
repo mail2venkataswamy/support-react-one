@@ -1,7 +1,7 @@
 import React from "react";
-import Tierlevel from "../tier-level/tier-level.jsx";
+import Tierlevel from "../../common/tier-level/tier-level.jsx";
 import "./product-info.scss";
-import Typefilter from "../type/type.jsx";
+import Typefilter from "../../common/type/type.jsx";
 import InputSuggestions from "../input-suggestions/input-suggestions.jsx";
 import SelectBox from "../../common/simple-dropdown/dropdown.jsx";
 
