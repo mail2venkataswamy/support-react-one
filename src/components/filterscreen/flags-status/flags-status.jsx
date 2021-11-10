@@ -2,35 +2,12 @@ import React from "react";
 import SelectBox from "../../common/simple-dropdown/dropdown.jsx";
 import "./flags-status.scss";
 
-const Flagsstatus = () => {
-  let selectClearedOptions = [
-    {
-      label: "Final - Large Difference Vs Vender",
-      value: "Final - Large Difference Vs Vender",
-    },
-    {
-      label: "Final - Large varience Vs previous",
-      value: "Final - Large varience Vs previous",
-    },
-    {
-      label: "Final - Missing or Zero Final Price",
-      value: "Final - Missing or Zero Final Price",
-    },
-  ];
-  let selectCrossMarginOptions = [
-    {
-      label: "Final - Large Difference Vs Vender",
-      value: "Final - Large Difference Vs Vender",
-    },
-    {
-      label: "Final - Large varience Vs previous",
-      value: "Final - Large varience Vs previous",
-    },
-    {
-      label: "Final - Missing or Zero Final Price",
-      value: "Final - Missing or Zero Final Price",
-    },
-  ];
+const Flagsstatus = (props) => {
+  const {
+    reviewNeededOptions,
+    flaggedEditOptions,
+    isEditedRecordChecked,
+  } = props.data.filterPanelData;
 
   return (
     <>
@@ -40,7 +17,11 @@ const Flagsstatus = () => {
         <div className="labelAndFlaggedWrapper">
           <div className="flaggedEditLabel">Flagged Edits:</div>
           <div className="flaggedEditwrapper">
-            <SelectBox type="single" options={selectClearedOptions}></SelectBox>
+            <SelectBox
+              type="single"
+              options={flaggedEditOptions}
+              onChange={props.onChangeFlaggedEditValue}
+            ></SelectBox>
           </div>
         </div>
         <p></p>
@@ -49,13 +30,20 @@ const Flagsstatus = () => {
           <div className="reviewNeededWrapper">
             <SelectBox
               type="single"
-              options={selectCrossMarginOptions}
+              options={reviewNeededOptions}
+              onChange={props.onChangeReviewNeededValue}
             ></SelectBox>
           </div>
         </div>
         <div className="editedRecordsWrapper">
           <label>
-            <input id={"editedRecord"} type="checkbox"></input>
+            <input
+              id={"editedRecord"}
+              type="checkbox"
+              value="editedRecord"
+              onClick={props.onSelectEditedRecordValue}
+              checked={isEditedRecordChecked}
+            ></input>
             {"Edited Records"}
           </label>
         </div>

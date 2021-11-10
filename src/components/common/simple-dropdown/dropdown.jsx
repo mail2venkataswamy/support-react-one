@@ -7,8 +7,12 @@ const SimpleDropdown = (props) => {
   return (
     <Dropdown
       options={props.options}
-      onChange={props.onSelect}
-      value={defaultOption}
+      onChange={props.onChange}
+      value={
+        props.selectedValue && props.selectedValue.value
+          ? props.selectedValue
+          : defaultOption
+      }
       placeholder="Select an option"
     />
   );

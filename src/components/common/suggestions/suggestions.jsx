@@ -1,6 +1,8 @@
 import React from "react";
 import "./suggestions.scss";
 const Suggestions = (props) => {
+  let keySearch = props.keySearch;
+
   const options =
     props.results &&
     props.results.map((suggestion, index) => {
@@ -14,12 +16,15 @@ const Suggestions = (props) => {
         </li>
       );
     });
-  return options.length > 0 ? (
-    <div className="suggestionsWrapper">
-      <ul>{options}</ul>
-    </div>
-  ) : (
-    <></>
+  return (
+    options && (
+      <div
+        className="suggestionsWrapper"
+        style={{ display: keySearch !== "" ? "block" : "none" }}
+      >
+        <ul>{options}</ul>
+      </div>
+    )
   );
 };
 

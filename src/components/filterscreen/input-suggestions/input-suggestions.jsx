@@ -7,6 +7,7 @@ const InputSuggestion = (props) => {
       <input onChange={props.onChange} value={props.value}></input>
       <Suggestions
         results={props.results}
+        keySearch={props.keySearch}
         onClick={props.onClick}
         value={props.value}
       ></Suggestions>
